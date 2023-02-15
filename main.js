@@ -1,4 +1,11 @@
 let ar = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","α","β","γ","δ"]
+const DOM = {
+    inputSection: document.getElementById("inputs"),
+    numberInput: document.getElementById("number"),
+    initialBaseInput: document.getElementById("initialBase"),
+    finalBaseInput: document.getElementById("finalBase"),
+    convertButton: document.getElementById("submit")
+}
 function str(num){
   return ar[num]
 }
@@ -31,3 +38,6 @@ function  convert(x, b){
   }while (x>0)
   return ret
 }
+DOM.convertButton.addEventListener("click", function(){
+    
+})
