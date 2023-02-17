@@ -8,6 +8,10 @@ const DOM = {
     resultsSection: document.getElementById("results")
 }
 function str(num){
+  if (num >35){
+    console.log(ar[num])
+    return ar[num].toLowerCase()
+  }
   return ar[num]
 }
 function toBase10(n,b){
@@ -16,16 +20,18 @@ function toBase10(n,b){
     n = n.reverse()
     let p = 0
     let s = 0
+    let bad
     n.forEach(d => {
         let rd = ar.findIndex(c => c == d)
-        if (rd > b-1){
+        if (rd > b-1 || !rd){
+          bad =  true
           return false
         }
         rd = rd * (b**p)
         s =s + rd
         p++
     });
-    return s
+    return !bad && s
 }
 function  convert(x, b){
   let ret = "", rep = 1
